@@ -1,0 +1,32 @@
+body{
+    background-color: rgb(223, 223, 223);
+    background-image: url(https://img.freepik.com/free-vector/ink-splash-duotone-stripe-background_1409-1379.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#titulo{
+    font-family: impact;
+    color: gray ;
+    text-align: center;
+    background-color: aliceblue;
+    margin-top: 20px 30px 20px 30px
+}
+#descrip{
+    text-align: center;
+    font-family: impact;
+}
+ul{
+    list-style: none;
+    font-family: serif;
+    text-align: center;
+    padding-left: 0px;
+}
+
+h1{
+    color: tomato;
+    text-align: center;
+}
+
+#deku{
+    width: 500px;
+}
