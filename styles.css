@@ -1,15 +1,75 @@
+@keyframes changeColor {
+    0% {
+      color: rgb(100, 89, 255);
+    }
+    50% {
+      color: rgb(0, 195, 255);
+    }
+    95% {
+      color: rgb(255, 0, 234);
+    }
+    100%{
+      color: rgb(100, 89, 255);
+
+    }
+  }
+
 body{
-    background-color: rgb(223, 223, 223);
-    background-image: url(https://img.freepik.com/free-vector/ink-splash-duotone-stripe-background_1409-1379.jpg);
-    background-size: cover;
+    background-image: url(bgjw.jpg);
     background-repeat: no-repeat;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    
 }
+
+.container2{
+    display: flex;
+    text-justify: auto;
+    text-align: center;
+    
+}
+
+
+
+.boton{
+    display: flex;
+    border-radius: 20px;
+    margin-left: 10px;
+    height: 100px;
+    background-color: rgb(17, 180, 255);
+    flex: 1;
+    transition: .3s all ease;
+    align-items: center;
+    border: 0;
+
+    align-content: center;
+    font-size: 30px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    justify-content: center;
+    text-shadow: 2px 2px 4px gray;
+    box-shadow: 2px 2px 4px rgb(68, 68, 68);
+
+}
+
+.boton:hover{
+    flex: 2;
+    background-color: rgb(172, 224, 255);
+    cursor: pointer;
+}
+
 #titulo{
     font-family: impact;
-    color: gray ;
     text-align: center;
     background-color: aliceblue;
-    margin-top: 20px 30px 20px 30px
+    margin-top: 20px 30px 20px 30px;
+    animation-name: changeColor;
+    animation-duration: 5s;
+    animation-iteration-count:infinite;
+    text-shadow: 2px 2px 5px blueviolet;
+    border-radius: 10px;
 }
 #descrip{
     text-align: center;
@@ -20,13 +80,61 @@ ul{
     font-family: serif;
     text-align: center;
     padding-left: 0px;
+    
 }
 
-h1{
-    color: tomato;
+.textito{
+    height: 25%;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: .3s all ease;
+    background-color: rgb(211, 211, 211);
+    width: 100%;
+    height: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 20px;
+    transition: .3s all ease;
+    box-shadow: 2px 2px 4px rgb(68, 68, 68);
+}
+.textito a img{
+    width: 100px;
+    transition: .3s all ease;
+}
+
+
+.textito:hover{
+    background-color: #505050;
+    height: 500px;
+}
+
+
+.textito a img:hover{
+    width: 200px;
+    cursor: pointer;
+}
+
+.descripcion{
+    margin-top: 50px;
+    display: flex;
     text-align: center;
+    align-content: center;
+    
+
+
+}
+/*.descripcion:hover{
+    background-color: #505050;
+}*/
+.descripcion h1{
+    color: aqua;
+    text-shadow: 2px 2px 4px gray;
 }
 
-#deku{
-    width: 500px;
+.descripcion p{
+    padding: 5px;
+    color: white;
+    text-shadow: 2px 2px 4px gray;
+    font-size: 18px;
+    text-align: center;
+    text-justify: center;
 }
