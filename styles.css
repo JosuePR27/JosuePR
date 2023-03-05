@@ -35,7 +35,7 @@ body{
 .boton{
     display: flex;
     border-radius: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
     height: 100px;
     background-color: rgb(17, 180, 255);
     flex: 1;
@@ -51,6 +51,7 @@ body{
     justify-content: center;
     text-shadow: 2px 2px 4px gray;
     box-shadow: 2px 2px 4px rgb(68, 68, 68);
+
 
 }
 
@@ -137,4 +138,32 @@ ul{
     font-size: 18px;
     text-align: center;
     text-justify: center;
+}
+
+.pic-container{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-top: 50px;
+    width: 100%;
+    justify-content: center;
+}
+.sesion{
+    display: flex;
+    width: 700px;
+    height: 530px;
+}
+.sesion img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: .8;
+    transition: .5s ease;
+    border-radius: 10px;
+}
+.sesion img:hover{
+    cursor: pointer;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
 }
