@@ -96,6 +96,7 @@ ul{
     border-radius: 20px;
     transition: .3s all ease;
     box-shadow: 2px 2px 4px rgb(68, 68, 68);
+    opacity: .7;
 }
 .textito a img{
     width: 100px;
@@ -106,6 +107,7 @@ ul{
 .textito:hover{
     background-color: #505050;
     height: 500px;
+    opacity: 1;
 }
 
 
@@ -119,6 +121,7 @@ ul{
     display: flex;
     text-align: center;
     align-content: center;
+    
     
 
 
