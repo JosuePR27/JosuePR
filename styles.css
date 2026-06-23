@@ -64,56 +64,6 @@ body{
   }
 
   
-  
-/*.container2{
-    display: flex;
-    text-justify: auto;
-    text-align: center;
-    
-}
-
-
-
-.boton{
-    display: flex;
-    border-radius: 20px;
-    margin-left: 5px;
-    height: 100px;
-    background-color: rgb(17, 180, 255);
-    flex: 1;
-    transition: .3s all ease;
-    align-items: center;
-    border: 0;
-
-    align-content: center;
-    font-size: 30px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    justify-content: center;
-    text-shadow: 2px 2px 4px gray;
-    box-shadow: 2px 2px 4px rgb(68, 68, 68);
-
-
-}
-
-.boton:hover{
-    flex: 2;
-    background-color: rgb(172, 224, 255);
-    cursor: pointer;
-}
-
-#titulo{
-    font-family: impact;
-    text-align: center;
-    background-color: aliceblue;
-    margin-top: 20px 30px 20px 30px;
-    animation-name: changeColor;
-    animation-duration: 5s;
-    animation-iteration-count:infinite;
-    text-shadow: 2px 2px 5px blueviolet;
-    border-radius: 10px;
-}*/
 #descrip{
     text-align: center;
     font-family: impact;
