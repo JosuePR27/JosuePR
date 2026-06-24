@@ -74,7 +74,7 @@ const proyectos = [
   {
     nombre: 'SuperRutaApp',
     desc: 'Aplicación movil la cual se encarga de crear una ruta eficiente a la hora de hacer la despensa, todo en base los productos que el usuario agrega junto con su pasillo de ubicacion.',
-    tags: ['Flutter', 'Dart'],
+    tags: ['Flutter', 'Dart',],
     link: '#',
     imagenes: [
       'img/iapp1.jpeg',
@@ -100,6 +100,16 @@ const proyectos = [
       'img/p4-1.png',
       'img/p4-2.png',
     ]
+  },
+  {
+    nombre: 'Proyecto 5',
+    desc: 'Mini e-commerce con carrito y diseño responsive.',
+    tags: ['HTML', 'CSS', 'JS'],
+    link: '#',
+    imagenes: [
+      'img/p4-4.png',
+      'img/p4-5.png',
+      ]
   }
 ];
 
@@ -144,7 +154,6 @@ function seleccionarProyecto(i) {
   const p = proyectos[i];
   document.getElementById('panelTitulo').textContent = p.nombre;
   document.getElementById('panelDesc').textContent = p.desc;
-  document.getElementById('panelLink').href = p.link;
   document.getElementById('panelTags').innerHTML =
     p.tags.map(t => `<span class="ptag">${t}</span>`).join('');
 
