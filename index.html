@@ -12,7 +12,7 @@
     <div class="nav-island-inner">
       <ul>
         <li><a href="#josuepr">Inicio</a></li>
-        <li><a href="#twitch">Twitch</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -22,7 +22,7 @@
   <!-- Índice flotante lateral -->
   <nav class="side-index" id="sideIndex" aria-label="Índice de secciones">
     <a href="#josuepr" class="side-dot active" data-label="JosuePR"></a>
-    <a href="#twitch" class="side-dot" data-label="Twitch"></a>
+    <a href="#proyectos" class="side-dot" data-label="Twitch"></a>
     <a href="#habilidades" class="side-dot" data-label="Habilidades"></a>
     <a href="#contacto" class="side-dot" data-label="Contacto"></a>
   </nav>
@@ -38,16 +38,64 @@
       </div>
     </section>
 
-    <section id="twitch" class="seccion">
-      <div class="sec-contenido">
-        <span class="sec-etiqueta">Stream</span>
-        <h2>Twitch</h2>
-        <p>Puedes ser parte de mi familia de streams desde la plataforma de Twitch. Solo haz clic en el logo y ayúdame siguiéndome para que la familia crezca cada vez más.</p>
-        <a href="https://www.twitch.tv/joshrg27" target="_blank" class="twitch-btn">
-          <img src="logo.png" alt="Twitch: joshrg27">
-          joshrg27
-        </a>
-      </div>
+    <section id="proyectos" class="seccion">
+  <div class="sec-contenido sec-proyectos">
+
+    <span class="sec-etiqueta">Lo que he construido</span>
+    <h2>Proyectos</h2>
+
+    <div class="proyectos-layout">
+
+      <!-- Menú lateral izquierdo -->
+      <nav class="proyectos-sidebar">
+        <div class="proj-item active" data-proyecto="0" onclick="seleccionarProyecto(0)">
+          <div class="proj-icono">🌐</div>
+          <div class="proj-info">
+            <span class="proj-nombre">Página Personal</span>
+            <span class="proj-tech">HTML · CSS</span>
+          </div>
+        </div>
+        <div class="proj-item" data-proyecto="1" onclick="seleccionarProyecto(1)">
+          <div class="proj-icono">📱</div>
+          <div class="proj-info">
+            <span class="proj-nombre">SuperRutaApp</span>
+            <span class="proj-tech">Dart</span>
+          </div>
+        </div>
+        <div class="proj-item" data-proyecto="2" onclick="seleccionarProyecto(2)">
+          <div class="proj-icono">📊</div>
+          <div class="proj-info">
+            <span class="proj-nombre">Proyecto 3</span>
+            <span class="proj-tech">CSS · JS</span>
+          </div>
+        </div>
+        <div class="proj-item" data-proyecto="3" onclick="seleccionarProyecto(3)">
+          <div class="proj-icono">🛒</div>
+          <div class="proj-info">
+            <span class="proj-nombre">Proyecto 4</span>
+            <span class="proj-tech">HTML · CSS · JS</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Panel derecho con imágenes -->
+         <div class="proyectos-panel">
+            <div class="panel-header">
+             <p class="panel-titulo" id="panelTitulo">Página Personal</p>
+              <p class="panel-desc" id="panelDesc">Sitio web personal para mostrar proyectos y habilidades como desarrollador front-end.</p>
+              <div class="panel-tags" id="panelTags">
+                
+              </div>
+           </div>
+           <div class="carousel-wrap">
+             <div class="carousel-track" id="carruselTrack"></div>
+             <button class="carr-btn carr-prev" onclick="moverCarrusel(-1)" aria-label="Anterior">&#8249;</button>
+             <button class="carr-btn carr-next" onclick="moverCarrusel(1)" aria-label="Siguiente">&#8250;</button>
+             <div class="carr-dots" id="carruselDots"></div>
+            </div>
+
+       </div>
+     </div>
     </section>
 
     <section id="habilidades" class="seccion">

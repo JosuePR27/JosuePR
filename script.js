@@ -55,3 +55,103 @@ const parallaxObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.3 });
 
 todasSecciones.forEach(sec => parallaxObserver.observe(sec));
+let slideActual = 0;
+let proyectoActual = 0;
+
+const proyectos = [
+  {
+    nombre: 'Página Personal',
+    desc: 'Sitio web personal, el cual es este mismo, donde puedo mostrar algunos proyectos realizados.',
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    link: 'https://tudominio.com',
+    imagenes: [
+      'img/pag1.png',
+      'img/pag2.png',
+      'img/pag3.png',
+      'img/pag4.png',
+    ]
+  },
+  {
+    nombre: 'SuperRutaApp',
+    desc: 'Aplicación movil la cual se encarga de crear una ruta eficiente a la hora de hacer la despensa, todo en base los productos que el usuario agrega junto con su pasillo de ubicacion.',
+    tags: ['Flutter', 'Dart'],
+    link: '#',
+    imagenes: [
+      'img/iapp1.jpeg',
+    ]
+  },
+  {
+    nombre: 'Proyecto 3',
+    desc: 'Proyecto de animaciones y transiciones CSS.',
+    tags: ['CSS', 'Animaciones'],
+    link: '#',
+    imagenes: [
+      'img/p3-1.png',
+      'img/p3-2.png',
+      'img/p3-3.png',
+    ]
+  },
+  {
+    nombre: 'Proyecto 4',
+    desc: 'Mini e-commerce con carrito y diseño responsive.',
+    tags: ['HTML', 'CSS', 'JS'],
+    link: '#',
+    imagenes: [
+      'img/p4-1.png',
+      'img/p4-2.png',
+    ]
+  }
+];
+
+function construirCarrusel(p) {
+  slideActual = 0;
+  const track = document.getElementById('carruselTrack');
+  const dots = document.getElementById('carruselDots');
+  if (!track || !dots) return;
+
+  track.innerHTML = p.imagenes.map(src =>
+    `<div class="carousel-slide">
+      <img src="${src}" alt="Captura de ${p.nombre}" loading="lazy">
+    </div>`
+  ).join('');
+
+  dots.innerHTML = p.imagenes.map((_, i) =>
+    `<button class="carr-dot${i === 0 ? ' active' : ''}" onclick="irASlide(${i})" aria-label="Ir a imagen ${i+1}"></button>`
+  ).join('');
+
+  track.style.transform = 'translateX(0)';
+}
+
+function irASlide(i) {
+  const p = proyectos[proyectoActual];
+  slideActual = Math.max(0, Math.min(i, p.imagenes.length - 1));
+  const track = document.getElementById('carruselTrack');
+  if (track) track.style.transform = `translateX(-${slideActual * 100}%)`;
+  document.querySelectorAll('.carr-dot').forEach((d, j) => d.classList.toggle('active', j === slideActual));
+}
+
+function moverCarrusel(dir) {
+  irASlide(slideActual + dir);
+}
+
+function seleccionarProyecto(i) {
+  proyectoActual = i;
+
+  document.querySelectorAll('.proj-item').forEach((el, j) => {
+    el.classList.toggle('active', j === i);
+  });
+
+  const p = proyectos[i];
+  document.getElementById('panelTitulo').textContent = p.nombre;
+  document.getElementById('panelDesc').textContent = p.desc;
+  document.getElementById('panelLink').href = p.link;
+  document.getElementById('panelTags').innerHTML =
+    p.tags.map(t => `<span class="ptag">${t}</span>`).join('');
+
+  construirCarrusel(p);
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  construirCarrusel(proyectos[0]);
+});
