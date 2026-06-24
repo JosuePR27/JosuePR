@@ -1,44 +1,98 @@
 <!DOCTYPE html>
-
 <head>
-    <meta charset="utf-8"/>
-    <title>JosuePR27 | Inicio</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <meta charset="utf-8"/>
+  <title>JosuePR27 | Inicio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    
-    <nav class="menu-container">
-        <ul>
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Acerca de</a></li>
-          <li><a href="fotos.html">Galeria</a></li>
-          <li><a href="#">Contacto</a></li>
+
+  <!-- Menú isla superior -->
+  <nav class="nav-island" id="navIsland">
+    <div class="nav-island-inner">
+      <ul>
+        <li><a href="#josuepr">Inicio</a></li>
+        <li><a href="#twitch">Twitch</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Índice flotante lateral -->
+  <nav class="side-index" id="sideIndex" aria-label="Índice de secciones">
+    <a href="#josuepr" class="side-dot active" data-label="JosuePR"></a>
+    <a href="#twitch" class="side-dot" data-label="Twitch"></a>
+    <a href="#habilidades" class="side-dot" data-label="Habilidades"></a>
+    <a href="#contacto" class="side-dot" data-label="Contacto"></a>
+  </nav>
+
+  <!-- Secciones -->
+  <main>
+
+    <section id="josuepr" class="seccion">
+      <div class="sec-contenido">
+        <span class="sec-etiqueta">Inicio</span>
+        <h1>JosuePR</h1>
+        <p>Bienvenido a esta página web personal. El contenido mostrado dentro de este sitio es personal y se ha hecho público con la finalidad de experimentar y poner en práctica el conocimiento adquirido en el desarrollo de páginas web, con el objetivo de llegar a ser un desarrollador front-end.</p>
+      </div>
+    </section>
+
+    <section id="twitch" class="seccion">
+      <div class="sec-contenido">
+        <span class="sec-etiqueta">Stream</span>
+        <h2>Twitch</h2>
+        <p>Puedes ser parte de mi familia de streams desde la plataforma de Twitch. Solo haz clic en el logo y ayúdame siguiéndome para que la familia crezca cada vez más.</p>
+        <a href="https://www.twitch.tv/joshrg27" target="_blank" class="twitch-btn">
+          <img src="logo.png" alt="Twitch: joshrg27">
+          joshrg27
+        </a>
+      </div>
+    </section>
+
+    <section id="habilidades" class="seccion">
+      <div class="sec-contenido">
+        <span class="sec-etiqueta">Lo que sé hacer</span>
+        <h2>Habilidades</h2>
+        <div class="skills-grid">
+          <div class="skill-card" data-skill="html">
+            <span class="skill-nombre">HTML</span>
+            <span class="skill-desc">Maquetado web</span>
+          </div>
+          <div class="skill-card" data-skill="css">
+            <span class="skill-nombre">CSS</span>
+            <span class="skill-desc">Estilos y diseño</span>
+          </div>
+          <div class="skill-card" data-skill="js">
+            <span class="skill-nombre">JavaScript</span>
+            <span class="skill-desc">Lógica e interacción</span>
+          </div>
+          <div class="skill-card" data-skill="git">
+            <span class="skill-nombre">Git</span>
+            <span class="skill-desc">Control de versiones</span>
+          </div>
+          <div class="skill-card" data-skill="html">
+            <span class="skill-nombre">Python</span>
+            <span class="skill-desc">Desarrollo basico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="seccion">
+      <div class="sec-contenido">
+        <span class="sec-etiqueta">Escríbeme</span>
+        <h2>Contacto</h2>
+        <ul class="contacto-lista">
+          <li><i class="fab fa-twitch"></i> Twitch: <a href="https://twitch.tv/joshrg27" target="_blank">joshrg27</a></li>
+          <li><i class="fas fa-envelope"></i> correo@ejemplo.com</li>
+          <li><i class="fab fa-github"></i> <a href="https://github.com/JosuePR27" target="_blank">github.com/JosuePR27</a></li>
         </ul>
-      </nav>
+      </div>
+    </section>
 
-    <div class="descripcion">
-    <div class="textito">
-        <h1>JosuePR:</h1>
-        
-            <p>Bienvenido a esta pagina web personal.
-            El contenido mostrado dentro de este sitio es personal y se ha hecho publico con la finalidad de experimentar y poner en practica el conocimiento adquirido en el desarrollo de paginas web con el objetivo de llegar a ser un desarrollador "front-end" para asi ser aplicable, elegible y competente para una empresa o proyecto futuro.
-            </p>
-            
-    </div>
+  </main>
 
-    <div class="textito">
-        <h1>Twitch:</h1>
-        
-            <p>Puedes ser parte de mi familia de Streams desde la plataforma de Twitch, solo haz click en el logo y ayudame siguiendome para que la familia crezca cada vez mas.
-            </p>
-            <a href="https://www.twitch.tv/joshrg27", target="_blank">
-                <img src="logo.png" alt="Twitch: joshrg27">
-              </a>
-    </div>
-    
-</div>
-
-
-</body> 
+  <script src="script.js"></script>
+</body>
 </html>
