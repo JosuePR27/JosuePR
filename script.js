@@ -37,3 +37,21 @@ function actualizarActivo(id) {
 window.addEventListener('scroll', () => {
   navIsland.classList.toggle('scrolled', window.scrollY > 30);
 });
+// Parallax: mostrar fondo de la sección activa
+const todasSecciones = document.querySelectorAll('.seccion');
+
+const parallaxObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    const pseudo = entry.target;
+    if (entry.isIntersecting) {
+      // Ocultar todos los fondos
+      todasSecciones.forEach(s => s.style.setProperty('--bg-opacity', '0'));
+      // Mostrar el de la sección activa
+      entry.target.classList.add('sec-visible');
+    } else {
+      entry.target.classList.remove('sec-visible');
+    }
+  });
+}, { threshold: 0.3 });
+
+todasSecciones.forEach(sec => parallaxObserver.observe(sec));

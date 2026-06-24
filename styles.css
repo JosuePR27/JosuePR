@@ -13,12 +13,68 @@ body {
 }
 
 /* Secciones */
+/* Sección base */
 .seccion {
   min-height: 100vh;
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgba(255,255,255,0.06);
   padding: 6rem 2rem 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo parallax dentro de cada sección */
+.seccion::before {
+  content: '';
+  position: fixed;       /* fixed es la clave del parallax */
+  inset: -20%;           /* más grande que la pantalla para que no queden huecos */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+
+/* El contenido siempre encima del fondo */
+.sec-contenido {
+  position: relative;
+  z-index: 1;
+  max-width: 680px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Imagen de fondo por sección */
+#josuepr::before {
+  background-image: url('https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?w=1600');
+  /* cámbialo por tu propia imagen */
+}
+
+#twitch::before {
+  background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1600');
+}
+
+#habilidades::before {
+  background-image: url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1600');
+}
+
+#contacto::before {
+  background-image: url('https://images.unsplash.com/photo-1516387938699-a93567ec168e?w=1600');
+}
+
+/* Overlay oscuro encima de la imagen para que el texto sea legible */
+.seccion::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 12, 0.72);
+  z-index: 0;
+}
+.sec-visible::before {
+  opacity: 1;
 }
 
 .sec-contenido {
