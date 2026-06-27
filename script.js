@@ -81,24 +81,22 @@ const proyectos = [
     ]
   },
   {
-    nombre: 'Proyecto 3',
-    desc: 'Proyecto de animaciones y transiciones CSS.',
-    tags: ['CSS', 'Animaciones'],
+    nombre: 'Hand Tracking',
+    desc: 'Proyecto de trackeo de manos en Python.',
+    tags: ['Python', 'OpenCV'],
     link: '#',
     imagenes: [
-      'img/p3-1.png',
-      'img/p3-2.png',
-      'img/p3-3.png',
+      'img/ht1.jpg',
+      'img/ht2.jpg',
     ]
   },
   {
-    nombre: 'Proyecto 4',
-    desc: 'Mini e-commerce con carrito y diseño responsive.',
-    tags: ['HTML', 'CSS', 'JS'],
+    nombre: 'Menu gestual',
+    desc: 'Menú flotante que se activa y controla con trackeo de manos',
+    tags: ['Python', 'OpenCV'],
     link: '#',
     imagenes: [
-      'img/p4-1.png',
-      'img/p4-2.png',
+      'img/mf.mp4',
     ]
   },
   {
