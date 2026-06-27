@@ -96,7 +96,7 @@ const proyectos = [
     tags: ['Python', 'OpenCV'],
     link: '#',
     imagenes: [
-      'img/mf.mp4',
+      'img/mf.jpg',
     ]
   },
   {
