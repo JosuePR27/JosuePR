@@ -525,3 +525,130 @@ body {
   background: #9146ff;
   transform: scale(1.35);
 }
+@media (max-width: 768px) {
+  .proyectos-layout {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .proyectos-sidebar {
+    width: 100%;
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 0.5px solid rgba(255,255,255,0.08);
+    padding: 0.5rem;
+  }
+
+  .proj-item {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border-left: none;
+    border-bottom: 2px solid transparent;
+  }
+
+  .proj-item.active {
+    border-left: none;
+    border-bottom: 2px solid #9146ff;
+  }
+
+  .proj-info {
+    display: none; /* en móvil solo mostramos el icono para ahorrar espacio */
+  }
+
+  .proyectos-panel {
+    width: 100%;
+  }
+
+  .panel-header {
+    padding: 1rem;
+  }
+
+  .panel-desc {
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .carousel-wrap {
+    min-height: 260px; /* altura fija para que el carrusel no se aplaste */
+  }
+}
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+
+.lightbox.activo {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 24px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 0.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 0.5px solid rgba(255,255,255,0.2);
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 10;
+}
+
+.lightbox-arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+/* Si solo hay una imagen, ocultamos las flechas */
+.lightbox-arrow.oculto {
+  display: none;
+}
+
+.lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}

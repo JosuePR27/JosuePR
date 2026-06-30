@@ -148,6 +148,12 @@
     </section>
 
   </main>
+  <div class="lightbox" id="lightbox" onclick="cerrarLightbox(event)">
+    <button class="lightbox-close" onclick="cerrarLightbox(event)" aria-label="Cerrar">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" onclick="moverLightbox(event, -1)" aria-label="Anterior">&#8249;</button>
+    <img src="" alt="" id="lightboxImg">
+    <button class="lightbox-arrow lightbox-next" onclick="moverLightbox(event, 1)" aria-label="Siguiente">&#8250;</button>
+  </div>
 
   <script src="script.js"></script>
 </body>

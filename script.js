@@ -117,11 +117,11 @@ function construirCarrusel(p) {
   const dots = document.getElementById('carruselDots');
   if (!track || !dots) return;
 
-  track.innerHTML = p.imagenes.map(src =>
-    `<div class="carousel-slide">
-      <img src="${src}" alt="Captura de ${p.nombre}" loading="lazy">
-    </div>`
-  ).join('');
+  track.innerHTML = p.imagenes.map((src, i) =>
+  `<div class="carousel-slide">
+    <img src="${src}" alt="Captura de ${p.nombre}" loading="lazy" style="cursor: zoom-in;" onclick="abrirLightbox(${i})">
+  </div>`
+).join('');
 
   dots.innerHTML = p.imagenes.map((_, i) =>
     `<button class="carr-dot${i === 0 ? ' active' : ''}" onclick="irASlide(${i})" aria-label="Ir a imagen ${i+1}"></button>`
@@ -161,4 +161,51 @@ function seleccionarProyecto(i) {
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   construirCarrusel(proyectos[0]);
+});
+
+function abrirLightbox(i) {
+  slideActual = i;
+  irASlide(i); // sincroniza el carrusel de fondo también
+  mostrarImagenLightbox();
+  document.getElementById('lightbox').classList.add('activo');
+}
+
+function mostrarImagenLightbox() {
+  const p = proyectos[proyectoActual];
+  const img = document.getElementById('lightboxImg');
+  img.src = p.imagenes[slideActual];
+  img.alt = `Captura de ${p.nombre}`;
+
+  const haySoloUna = p.imagenes.length <= 1;
+  document.querySelector('.lightbox-prev').classList.toggle('oculto', haySoloUna);
+  document.querySelector('.lightbox-next').classList.toggle('oculto', haySoloUna);
+}
+
+function moverLightbox(e, dir) {
+  e.stopPropagation(); // evita que el click en la flecha cierre el lightbox
+  const p = proyectos[proyectoActual];
+  slideActual = (slideActual + dir + p.imagenes.length) % p.imagenes.length;
+  irASlide(slideActual); // sincroniza el carrusel de fondo
+  mostrarImagenLightbox();
+}
+
+function cerrarLightbox(e) {
+  if (e.target.id === 'lightboxImg' || e.target.closest('.lightbox-arrow')) return;
+  document.getElementById('lightbox').classList.remove('activo');
+}
+
+document.addEventListener('keydown', e => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('activo')) return;
+
+  if (e.key === 'Escape') lb.classList.remove('activo');
+  if (e.key === 'ArrowLeft') moverLightbox(e, -1);
+  if (e.key === 'ArrowRight') moverLightbox(e, 1);
+});
+
+// Cerrar con la tecla Escape
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.getElementById('lightbox').classList.remove('activo');
+  }
 });
